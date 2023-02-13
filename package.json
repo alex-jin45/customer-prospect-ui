@@ -1,0 +1,19 @@
+{
+  "name": "customer-prospect-ui",
+  "version": "1.0.0",
+  "description": "customer prospect summaries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamonJOrtega/customer-prospect-UI.git"
+  },
+  "author": "Ramon Ortega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamonJOrtega/customer-prospect-UI/issues"
+  },
+  "homepage": "https://github.com/RamonJOrtega/customer-prospect-UI#readme"
+}
