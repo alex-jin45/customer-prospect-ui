@@ -1,13 +1,10 @@
 import React from "react";
 import ProbabilityHistoryChart from "./ProbabilityHistoryChart";
 import formatProbabilityHistory from "../helpers/formatProbabilityHistory";
-const Card = (props) => {
-  console.log("inside the card #" + props.currentRow.oppId);
-  console.log(
-    "1st probability hisroty days ago " +
-      props.currentRow.probabilityHistory[0].daysAgo
-  );
+import formatProbabilityFactors from "../helpers/formatProbabilityFactors";
+import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
 
+const Card = (props) => {
   const handleClick = () => {
     props.setCardShown(!props.cardShown);
   };
@@ -15,8 +12,14 @@ const Card = (props) => {
   const formattedProbHist = formatProbabilityHistory(
     props.currentRow.probabilityHistory
   );
+
+  const formattedProbFacts = formatProbabilityFactors(
+    props.currentRow.pilytixFactorsIncreasingWin,
+    props.currentRow.pilytixFactorsDecreasingWin
+  );
+
   return (
-    <div >
+    <div>
       <div>Opp # {props.currentRow.oppId}</div>
       <div>Stage {props.currentRow.stage}</div>
       <div>Rep Prob {props.currentRow.repProbability}</div>
@@ -26,6 +29,7 @@ const Card = (props) => {
       <div>Product {props.currentRow.product}</div>
       <div>Sales Rep{props.currentRow.salesRepName}</div>
       <ProbabilityHistoryChart data={formattedProbHist} />
+      <ProbabilityFactorsTrendChart data={formattedProbFacts} />
 
       <button onClick={handleClick}>Close</button>
     </div>
