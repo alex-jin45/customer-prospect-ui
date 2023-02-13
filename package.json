@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/RamonJOrtega/customer-prospect-UI/issues"
   },
-  "homepage": "https://github.com/RamonJOrtega/customer-prospect-UI#readme"
+  "homepage": "https://github.com/RamonJOrtega/customer-prospect-UI#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.8",
+    "@nivo/core": "^0.80.0",
+    "@nivo/line": "^0.80.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  }
 }
