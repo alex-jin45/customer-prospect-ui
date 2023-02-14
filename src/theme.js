@@ -18,7 +18,6 @@ export const tokens = (mode) => ({
           800: "#121212",
           900: "#000000",
         },
-
         primary: {
           DEFAULT: "#141B2D",
           50: "#4C67AC",
@@ -32,7 +31,6 @@ export const tokens = (mode) => ({
           800: "#000000",
           900: "#000000",
         },
-
         greenAccent: {
           DEFAULT: "#4CCEAC",
           50: "#DCF5EF",
@@ -46,7 +44,6 @@ export const tokens = (mode) => ({
           800: "#185948",
           900: "#0C2D25",
         },
-
         redAccent: {
           DEFAULT: "#DB4F4A",
           50: "#F9E4E3",
@@ -60,7 +57,6 @@ export const tokens = (mode) => ({
           800: "#681815",
           900: "#390D0B",
         },
-
         blueAccent: {
           DEFAULT: "#6870FA",
           50: "#FFFFFF",
@@ -232,6 +228,5 @@ export const useMode = () => {
     []
   );
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  return [theme, colorMode];
 };
-
-return [them, colorMode];
