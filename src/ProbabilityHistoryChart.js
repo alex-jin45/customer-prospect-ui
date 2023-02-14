@@ -5,8 +5,6 @@ import "./styles.css";
 import { ResponsiveLine } from "@nivo/line";
 
 const ProbabilityHistoryChart = (props) => {
-  console.log(props.data);
-
   return (
     <div className="chart">
       <ResponsiveLine

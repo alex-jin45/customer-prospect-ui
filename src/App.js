@@ -1,11 +1,23 @@
 import "./styles.css";
 import BasicTable from "./Table";
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+
+import TopDisplay from "./TopDisplay";
 
 export default function App() {
+  const [theme, colorMode] = useMode();
   return (
-    <div className="App">
-      <h2>PILYTIX Scored Opportunities</h2>
-      <BasicTable></BasicTable>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          <main className="content">
+            <TopDisplay />
+            <BasicTable></BasicTable>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
