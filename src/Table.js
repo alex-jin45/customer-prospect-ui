@@ -18,35 +18,42 @@ export default function BasicTable() {
    * A basic table to display all non-nested information from opportunities.json
    */
   const data = opportunities.default;
+  const maxIndex = data.length - 1;
 
-  const [cardShown, setcardShown] = React.useState(false);
-  const [currentRow, setCurrentRow] = React.useState({});
+  const [cardShown, setCardShown] = React.useState(false);
+  const rowIndex = React.useRef(0);
+  const [currentRow, setCurrentRow] = React.useState(data[0]);
+
   React.useEffect(() => {
-    if (cardShown) {
-      document.addEventListener("keydown", detectKeyDown, true);
-    }
-  }, [cardShown]);
+    document.addEventListener("keyup", detectKeyUp, true);
+  }, []);
 
-  const detectKeyDown = (e) => {
-    console.log("clicked key: ", e.key);
-    if (e.key === "ArrowDown") {
-      const nextRow = document.getElementById("mainTable").rows[0];
-      console.log("Next Table row: " + nextRow);
+  const detectKeyUp = (e) => {
+    if (e.key === "ArrowDown" && rowIndex.current < maxIndex) {
+      rowIndex.current = rowIndex.current + 1;
+      console.log("next row index " + rowIndex.current);
+      setCurrentRow(data[rowIndex.current]);
+    }
+    if (e.key === "ArrowUp" && rowIndex.current > 0) {
+      rowIndex.current = rowIndex.current - 1;
+      console.log("prev row index " + rowIndex.current);
+      setCurrentRow(data[rowIndex.current]);
     }
   };
 
   const handleRowClick = (event, row) => {
-    setcardShown(!cardShown);
+    setCardShown(!cardShown);
+    rowIndex.current = row.oppId - 1;
     setCurrentRow(row);
   };
 
   return (
-    <Box>
+    <>
       <Box className="Card">
         {cardShown && (
           <Card
             currentRow={currentRow}
-            setCardShown={setcardShown}
+            setCardShown={setCardShown}
             cardShown={cardShown}
           />
         )}
@@ -88,6 +95,6 @@ export default function BasicTable() {
           </TableBody>
         </Table>
       </TableContainer>
-    </Box>
+    </>
   );
 }
