@@ -24,6 +24,7 @@ export const formatProbabilityFactors = (factsIncWin, factsDecWin) => {
 
       const message = factsIncWin[i].message;
       const description = factsIncWin[i].weight.description;
+
       Object.assign(formattedProbFacts[1][0], {
         [name]: { message: message, description: description }
       });
@@ -37,11 +38,22 @@ export const formatProbabilityFactors = (factsIncWin, factsDecWin) => {
       const name = factsDecWin[i].name;
       const weight = factsDecWin[i].weight.value; //let source = {};//source[name] = weight;
       Object.assign(formattedProbFacts[0][0], { [name]: weight });
+
+      const message = factsDecWin[i].message;
+      const description = factsDecWin[i].weight.description;
+
+      Object.assign(formattedProbFacts[1][0], {
+        [name]: { message: message, description: description }
+      });
+
       totalWeight = totalWeight + weight;
     }
   }
 
   Object.assign(formattedProbFacts[0][1], { Total: totalWeight });
+  Object.assign(formattedProbFacts[1][0], {
+    Total: { message: "", description: "" }
+  });
 
   // console.log("all my formatted factors ");
   // console.log(formattedProbFacts);
