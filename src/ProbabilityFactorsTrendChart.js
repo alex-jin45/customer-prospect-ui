@@ -4,16 +4,18 @@ import "./styles.css";
 import { tokens } from "./theme";
 
 import { ResponsiveBar } from "@nivo/bar";
+import { Description } from "@mui/icons-material";
 
 const ProbabilityFactorsTrendChart = (props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const keys = Object.keys(props.data[0]).slice(1);
+  const data = props.data[0];
+
+  const keys = Object.keys(props.data[0][0]).slice(1);
   keys.push("Total");
-
-  const data = props.data;
-
+  console.log(keys);
+  console.log(props);
   return (
     <div className="chart">
       <ResponsiveBar
@@ -121,6 +123,10 @@ const ProbabilityFactorsTrendChart = (props) => {
             <strong>
               {id}: {value}
             </strong>
+            <br />
+            <strong>{props.data[1][0][id].description}</strong>
+            <br />
+            <strong>{props.data[1][0][id].message}</strong>
           </div>
         )}
         role="application"
