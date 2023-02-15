@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Box } from "@mui/material";
 
 import * as opportunities from "./opportunities.json";
 
@@ -36,13 +37,12 @@ export default function BasicTable() {
 
   const handleRowClick = (event, row) => {
     setcardShown(!cardShown);
-    //console.log(cardShown);
     setCurrentRow(row);
   };
 
   return (
-    <div>
-      <div className="Card">
+    <Box>
+      <Box className="Card">
         {cardShown && (
           <Card
             currentRow={currentRow}
@@ -50,7 +50,7 @@ export default function BasicTable() {
             cardShown={cardShown}
           />
         )}
-      </div>
+      </Box>
 
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table" id="mainTable">
@@ -88,6 +88,6 @@ export default function BasicTable() {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </Box>
   );
 }
