@@ -5,7 +5,7 @@ import formatProbabilityFactors from "./helpers/formatProbabilityFactors";
 import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
 import { ColorModeContext, tokens } from "./theme";
 import { useContext } from "react";
-import { Box, Grid, div, useTheme } from "@mui/material";
+import { Box, Grid, useTheme } from "@mui/material";
 
 const Card = (props) => {
   const theme = useTheme();
