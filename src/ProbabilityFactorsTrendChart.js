@@ -1,23 +1,52 @@
 import React from "react";
 import { useTheme } from "@mui/material";
 import "./styles.css";
+import { tokens } from "./theme";
 
 import { ResponsiveBar } from "@nivo/bar";
 
 const ProbabilityFactorsTrendChart = (props) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   const keys = Object.keys(props.data[0]).slice(1);
   keys.push("Total");
-  console.log(keys);
+
   const data = props.data;
+
   return (
     <div className="chart">
       <ResponsiveBar
         data={data}
+        theme={{
+          textColor: colors.grey[100],
+          axis: {
+            domain: {
+              line: {
+                stroke: colors.grey[100]
+              }
+            },
+            ticks: {
+              line: {
+                stroke: colors.grey[100],
+                strokeWidth: 1
+              }
+            },
+            text: {
+              fill: colors.grey[100]
+            }
+          },
+          legends: {
+            text: {
+              fill: colors.grey[100]
+            }
+          }
+        }}
         keys={keys}
         indexBy="weight_value"
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 50, right: 150, bottom: 50, left: 50 }}
         padding={0.1}
-        layout="horizontal"
+        layout="vertical"
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors={{ scheme: "red_blue" }}
@@ -31,16 +60,16 @@ const ProbabilityFactorsTrendChart = (props) => {
         axisTop={null}
         axisRight={null}
         axisBottom={{
-          tickSize: 10,
-          tickPadding: 6,
+          tickSize: 5,
+          tickPadding: 5,
           tickRotation: 0,
-          legend: "weight_value",
+          legend: "Factors and Weights Influencing Win",
           legendPosition: "middle",
-          legendOffset: 32
+          legendOffset: 40
         }}
         axisLeft={{
           tickSize: 5,
-          tickPadding: 5,
+          tickPadding: 10,
           tickRotation: 0,
           legend: "",
           legendPosition: "middle",
@@ -60,13 +89,13 @@ const ProbabilityFactorsTrendChart = (props) => {
             anchor: "bottom-right",
             direction: "column",
             justify: false,
-            translateX: 120,
-            translateY: -4,
-            itemsSpacing: 2,
-            itemWidth: 96,
-            itemHeight: 31,
+            translateX: 85,
+            translateY: 0,
+            itemsSpacing: 0,
+            itemWidth: 80,
+            itemHeight: 20,
             itemDirection: "left-to-right",
-            itemOpacity: 0.85,
+            itemOpacity: 0.95,
             symbolSize: 20,
             effects: [
               {
@@ -79,7 +108,21 @@ const ProbabilityFactorsTrendChart = (props) => {
           }
         ]}
         isInteractive={true}
-        tooltip={function () {}}
+        tooltip={({ id, value, color }) => (
+          <div
+            style={{
+              padding: 12,
+              color,
+              background: "#222222"
+            }}
+          >
+            <span>Look, I'm custom :)</span>
+            <br />
+            <strong>
+              {id}: {value}
+            </strong>
+          </div>
+        )}
         role="application"
         ariaLabel="Nivo bar chart demo"
         barAriaLabel={function (e) {
