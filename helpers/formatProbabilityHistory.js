@@ -1,4 +1,8 @@
-const formatProbabilityHistory = (unformattedProbHist) => {
+const formatProbabilityHistory = (
+  unformattedProbHist,
+  pilyProbNow,
+  repProbNow
+) => {
   let formattedProbabilityHistory = [
     {
       id: "pilytixProb",
@@ -19,6 +23,10 @@ const formatProbabilityHistory = (unformattedProbHist) => {
     formattedProbabilityHistory[0].data.push({ x: daysAgo, y: pilytixProb });
     formattedProbabilityHistory[1].data.push({ x: daysAgo, y: repProb });
   }
+  formattedProbabilityHistory[0].data.push({ x: 0, y: pilyProbNow });
+  formattedProbabilityHistory[1].data.push({ x: 0, y: repProbNow });
+
+  //console.log(formattedProbabilityHistory);
   return formattedProbabilityHistory;
 };
 
