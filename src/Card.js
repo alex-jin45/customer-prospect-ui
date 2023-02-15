@@ -5,7 +5,7 @@ import formatProbabilityFactors from "./helpers/formatProbabilityFactors";
 import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
 import { ColorModeContext, tokens } from "./theme";
 import { useContext } from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, Grid, div, useTheme } from "@mui/material";
 
 const Card = (props) => {
   const theme = useTheme();
@@ -17,7 +17,9 @@ const Card = (props) => {
   };
 
   const formattedProbHist = formatProbabilityHistory(
-    props.currentRow.probabilityHistory
+    props.currentRow.probabilityHistory,
+    props.currentRow.pilytixProbability,
+    props.currentRow.repProbability
   );
 
   const formattedProbFacts = formatProbabilityFactors(
@@ -26,24 +28,59 @@ const Card = (props) => {
   );
 
   return (
-    <Box>
-      <Box display="flex" justifyContent="space-between" m={10}>
-        <div>Opp # {props.currentRow.oppId} </div>
-        <div>Stage {props.currentRow.stage}</div>
-        <div>PX Tier {props.currentRow.pilytixTier}</div>
-        <div>Amount ${props.currentRow.amount}</div>
-        <div>Product {props.currentRow.product}</div>
-        <div>Sales Rep{props.currentRow.salesRepName}</div>
+    <Box m={2}>
+      <Box display="flex" justifyContent="space-between">
+        <Grid container spacing={0} textAlign="left">
+          <Grid item xs={6}>
+            <div>Card Number:</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>{props.currentRow.oppId}</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>Opportunity Stage</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>{props.currentRow.stage}</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>Amount</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>${props.currentRow.amount}</div>
+          </Grid>
+        </Grid>
 
-        <div>Rep Prob {props.currentRow.repProbability}</div>
-        <div>PX Prob {props.currentRow.pilytixProbability}</div>
-      </Box>
+        <Grid container spacing={0} textAlign="left">
+          <Grid item xs={12} textAlign="right">
+            <div>
+              <button onClick={handleClick}>Close</button>
+            </div>
+          </Grid>
 
-      <Box m={10}>
-        <ProbabilityHistoryChart data={formattedProbHist} />
-        <ProbabilityFactorsTrendChart data={formattedProbFacts} />
+          <Grid item xs={12}>
+            <div>{props.currentRow.oppName}</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>Product: </div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>{props.currentRow.product}</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>Sales Representative:</div>
+          </Grid>
+          <Grid item xs={6}>
+            <div>{props.currentRow.salesRepName} </div>
+          </Grid>
+        </Grid>
       </Box>
-      <button onClick={handleClick}>Close</button>
+      Probability History Current Representative Probability
+      {props.currentRow.repProbability}
+      Current Pilytix Probability
+      {props.currentRow.pilytixProbability}
+      <ProbabilityHistoryChart data={formattedProbHist} />
+      <ProbabilityFactorsTrendChart data={formattedProbFacts} />
     </Box>
   );
 };
