@@ -27,61 +27,69 @@ const Card = (props) => {
     props.currentRow.pilytixFactorsDecreasingWin
   );
 
+  console.log(formattedProbHist);
   return (
-    <Box m={2}>
-      <Box display="flex" justifyContent="space-between">
+    <>
+      <Box m={2} display="flex" justifyContent="space-between">
         <Grid container spacing={0} textAlign="left">
-          <Grid item xs={6}>
-            <div>Card Number:</div>
+          <Grid item xs={4}>
+            <div>Card Number</div>
           </Grid>
-          <Grid item xs={6}>
-            <div>{props.currentRow.oppId}</div>
+          <Grid item xs={8}>
+            <div>| {props.currentRow.oppId}</div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <div>Opportunity Stage</div>
           </Grid>
-          <Grid item xs={6}>
-            <div>{props.currentRow.stage}</div>
+          <Grid item xs={8}>
+            <div>| {props.currentRow.stage}</div>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <div>Amount</div>
           </Grid>
-          <Grid item xs={6}>
-            <div>${props.currentRow.amount}</div>
+          <Grid item xs={8}>
+            <div>| ${props.currentRow.amount}</div>
           </Grid>
         </Grid>
 
         <Grid container spacing={0} textAlign="left">
-          <Grid item xs={12} textAlign="right">
-            <div>
-              <button onClick={handleClick}>Close</button>
-            </div>
-          </Grid>
-
           <Grid item xs={12}>
             <div>{props.currentRow.oppName}</div>
           </Grid>
-          <Grid item xs={6}>
-            <div>Product: </div>
+          <Grid item xs={5}>
+            <div>Product </div>
           </Grid>
-          <Grid item xs={6}>
-            <div>{props.currentRow.product}</div>
+          <Grid item xs={7}>
+            <div>| {props.currentRow.product}</div>
           </Grid>
-          <Grid item xs={6}>
-            <div>Sales Representative:</div>
+          <Grid item xs={5}>
+            <div>Sales Representative</div>
           </Grid>
-          <Grid item xs={6}>
-            <div>{props.currentRow.salesRepName} </div>
+          <Grid item xs={7}>
+            <div>| {props.currentRow.salesRepName} </div>
           </Grid>
         </Grid>
+
+        <Box display="flex" flexDirection="column">
+          <button onClick={handleClick}>Close</button>
+          <Box display="flex" flexDirection="row">
+            <button onClick={handleClick}>Prev</button>
+            <button onClick={handleClick}>Next</button>
+          </Box>
+        </Box>
       </Box>
-      Probability History Current Representative Probability
-      {props.currentRow.repProbability}
-      Current Pilytix Probability
-      {props.currentRow.pilytixProbability}
+      <Box>
+        Current Representative Probability
+        {props.currentRow.repProbability}
+      </Box>
+      <Box>
+        Current Pilytix Probability
+        {props.currentRow.pilytixProbability}
+      </Box>
+      PILYTIX VS. Representative Probability History
       <ProbabilityHistoryChart data={formattedProbHist} />
       <ProbabilityFactorsTrendChart data={formattedProbFacts} />
-    </Box>
+    </>
   );
 };
 
