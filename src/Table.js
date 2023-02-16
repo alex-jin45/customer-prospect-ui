@@ -29,14 +29,12 @@ export default function BasicTable() {
   }, []);
 
   const detectKeyUp = (e) => {
-    if (e.key === "ArrowDown" && rowIndex.current < maxIndex) {
+    if (e.key === "ArrowRight" && rowIndex.current < maxIndex) {
       rowIndex.current = rowIndex.current + 1;
-      console.log("next row index " + rowIndex.current);
       setCurrentRow(data[rowIndex.current]);
     }
-    if (e.key === "ArrowUp" && rowIndex.current > 0) {
+    if (e.key === "ArrowLeft" && rowIndex.current > 0) {
       rowIndex.current = rowIndex.current - 1;
-      console.log("prev row index " + rowIndex.current);
       setCurrentRow(data[rowIndex.current]);
     }
   };
