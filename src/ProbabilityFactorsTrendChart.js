@@ -14,11 +14,11 @@ const ProbabilityFactorsTrendChart = (props) => {
 
   const keys = Object.keys(props.data[0][0]).slice(1);
   keys.push("Total");
-  console.log(keys);
-  console.log(props);
+
   return (
-    <div className="chart">
+    <div className="chartFactors">
       <ResponsiveBar
+        label="id"
         data={data}
         theme={{
           textColor: colors.grey[100],
@@ -45,16 +45,24 @@ const ProbabilityFactorsTrendChart = (props) => {
           }
         }}
         keys={keys}
-        indexBy="weight_value"
-        margin={{ top: 50, right: 150, bottom: 50, left: 50 }}
+        indexBy="id"
+        margin={{ top: 50, right: 10, bottom: 50, left: 50 }}
         padding={0.1}
         layout="vertical"
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
-        colors={{ scheme: "red_blue" }}
+        //colors={{ scheme: "greens" }}
+        colors={({ id, data }) => String(data[`${id}Color`])}
         colorBy="id"
         defs={[]}
         fill={[]}
+        markers={[
+          {
+            axis: "y",
+            value: 0,
+            lineStyle: { stroke: colors.grey[100], strokeWidth: 1 }
+          }
+        ]}
         borderColor={{
           from: "color",
           modifiers: [["darker", "1.9"]]
@@ -73,9 +81,9 @@ const ProbabilityFactorsTrendChart = (props) => {
           tickSize: 5,
           tickPadding: 10,
           tickRotation: 0,
-          legend: "",
+          legend: "Weight",
           legendPosition: "middle",
-          legendOffset: -60
+          legendOffset: -40
         }}
         enableGridX={true}
         enableGridY={false}
@@ -85,30 +93,30 @@ const ProbabilityFactorsTrendChart = (props) => {
           from: "color",
           modifiers: [["darker", 1.6]]
         }}
-        legends={[
-          {
-            dataFrom: "keys",
-            anchor: "bottom-right",
-            direction: "column",
-            justify: false,
-            translateX: 85,
-            translateY: 0,
-            itemsSpacing: 0,
-            itemWidth: 80,
-            itemHeight: 20,
-            itemDirection: "left-to-right",
-            itemOpacity: 0.95,
-            symbolSize: 20,
-            effects: [
-              {
-                on: "hover",
-                style: {
-                  itemOpacity: 1
-                }
-              }
-            ]
-          }
-        ]}
+        // legends={[
+        //   {
+        //     dataFrom: "keys",
+        //     anchor: "bottom-right",
+        //     direction: "column",
+        //     justify: false,
+        //     translateX: 85,
+        //     translateY: 0,
+        //     itemsSpacing: 0,
+        //     itemWidth: 80,
+        //     itemHeight: 20,
+        //     itemDirection: "left-to-right",
+        //     itemOpacity: 0.95,
+        //     symbolSize: 20,
+        //     effects: [
+        //       {
+        //         on: "hover",
+        //         style: {
+        //           itemOpacity: 1
+        //         }
+        //       }
+        //     ]
+        //   }
+        // ]}
         isInteractive={true}
         tooltip={({ id, value, color }) => (
           <div
