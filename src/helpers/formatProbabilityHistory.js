@@ -5,12 +5,12 @@ const formatProbabilityHistory = (
 ) => {
   let formattedProbabilityHistory = [
     {
-      id: "Representative",
+      id: `Rep`,
       color: "hsl(316, 70%, 50%)",
       data: []
     },
     {
-      id: "PILYTRIX",
+      id: `PX`,
       color: "hsl(337, 70%, 50%)",
       data: []
     }
