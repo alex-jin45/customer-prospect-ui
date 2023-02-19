@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
-
-.chart {
-  height: 400px;
+.chartHistory {
+  height: 600px;
+}
+.chartFactors {
+  height: 600px;
 }
 
-.Card {
-  border-radius: 10px;
-  /* background-color: Indigo-600; */
-  /* display: flex;
-  position: relative; */
+Th {
+  outline: 7px;
 }
 
 html,
@@ -21,13 +20,8 @@ body,
   text-align: center;
 }
 
-/* .App {
-  display: flex;
-  position: relative;
-} */
-
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
