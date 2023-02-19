@@ -1,19 +1,17 @@
 import React from "react";
+
 import { useTheme } from "@mui/material";
-import "./styles.css";
 import { tokens } from "./theme";
+import "./styles.css";
 
 import { ResponsiveBar } from "@nivo/bar";
-import { Description } from "@mui/icons-material";
 
 const ProbabilityFactorsTrendChart = (props) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   const data = props.data[0];
-
-  const keys = Object.keys(props.data[0][0]).slice(1);
-  keys.push("Total");
+  const keys = props.data[2].keys;
 
   return (
     <div className="chartFactors">
@@ -21,6 +19,15 @@ const ProbabilityFactorsTrendChart = (props) => {
         label="id"
         data={data}
         theme={{
+          annotations: {
+            text: {
+              fontSize: 13,
+              fill: "#BLACK",
+              outlineWidth: 2,
+              outlineColor: "#ffffff",
+              outlineOpacity: 1
+            }
+          },
           textColor: colors.grey[100],
           axis: {
             domain: {
@@ -46,12 +53,12 @@ const ProbabilityFactorsTrendChart = (props) => {
         }}
         keys={keys}
         indexBy="id"
-        margin={{ top: 50, right: 10, bottom: 50, left: 50 }}
+        margin={{ top: 67, right: 20, bottom: 0, left: 60 }}
         padding={0.1}
         layout="vertical"
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
-        //colors={{ scheme: "greens" }}
+        //colors={{ scheme: "purples" }}
         colors={({ id, data }) => String(data[`${id}Color`])}
         colorBy="id"
         defs={[]}
@@ -67,13 +74,11 @@ const ProbabilityFactorsTrendChart = (props) => {
           from: "color",
           modifiers: [["darker", "1.9"]]
         }}
-        axisTop={null}
-        axisRight={null}
-        axisBottom={{
-          tickSize: 5,
+        axisTop={{
+          tickSize: 30,
           tickPadding: 5,
           tickRotation: 0,
-          legend: "Factors and Weights Influencing Win",
+          //legend: "Factors and Weights Influencing Win",
           legendPosition: "middle",
           legendOffset: 40
         }}
@@ -85,6 +90,8 @@ const ProbabilityFactorsTrendChart = (props) => {
           legendPosition: "middle",
           legendOffset: -40
         }}
+        axisRight={null}
+        axisBottom={null}
         enableGridX={true}
         enableGridY={false}
         labelSkipWidth={11}
@@ -93,48 +100,44 @@ const ProbabilityFactorsTrendChart = (props) => {
           from: "color",
           modifiers: [["darker", 1.6]]
         }}
-        // legends={[
-        //   {
-        //     dataFrom: "keys",
-        //     anchor: "bottom-right",
-        //     direction: "column",
-        //     justify: false,
-        //     translateX: 85,
-        //     translateY: 0,
-        //     itemsSpacing: 0,
-        //     itemWidth: 80,
-        //     itemHeight: 20,
-        //     itemDirection: "left-to-right",
-        //     itemOpacity: 0.95,
-        //     symbolSize: 20,
-        //     effects: [
-        //       {
-        //         on: "hover",
-        //         style: {
-        //           itemOpacity: 1
-        //         }
-        //       }
-        //     ]
-        //   }
-        // ]}
         isInteractive={true}
-        tooltip={({ id, value, color }) => (
+        tooltip={({ id, value, color, scheme }) => (
           <div
             style={{
               padding: 12,
               color,
-              background: "#222222"
+              background: "#222222",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              width: "300px",
+              borderRadius: "10px"
             }}
           >
-            <span>Look, I'm custom :)</span>
-            <br />
-            <strong>
-              {id}: {value}
-            </strong>
-            <br />
-            <strong>{props.data[1][0][id].description}</strong>
-            <br />
-            <strong>{props.data[1][0][id].message}</strong>
+            <table>
+              <tr>
+                <td align="left">
+                  <>{props.data[1][0][id].winEffect}</>
+                </td>
+                <td align="left">
+                  <strong>{id}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td align="left">
+                  Factor Weight <strong>{value}</strong>
+                </td>
+                <td align="left">
+                  <strong>{props.data[1][0][id].description}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2" align="left">
+                  <strong>{props.data[1][0][id].message}</strong>
+                </td>
+              </tr>
+            </table>
           </div>
         )}
         role="application"
