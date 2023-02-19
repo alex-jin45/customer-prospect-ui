@@ -1,17 +1,16 @@
 import React from "react";
+
 import ProbabilityHistoryChart from "./ProbabilityHistoryChart";
+
 import formatProbabilityHistory from "./helpers/formatProbabilityHistory";
 import formatProbabilityFactors from "./helpers/formatProbabilityFactors";
 import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
-import { ColorModeContext, tokens } from "./theme";
-import { useContext } from "react";
-import { Box, Grid, useTheme } from "@mui/material";
+
+import { Box, Grid, IconButton } from "@mui/material";
+import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
+import SwitchLeftIcon from "@mui/icons-material/SwitchLeft";
 
 const Card = (props) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
-
   const handleClick = () => {
     props.setCardShown(!props.cardShown);
   };
@@ -27,68 +26,137 @@ const Card = (props) => {
     props.currentRow.pilytixFactorsDecreasingWin
   );
 
-  console.log(formattedProbHist);
   return (
     <>
-      <Box m={2} display="flex" justifyContent="space-between">
-        <Grid container spacing={0} textAlign="left">
-          <Grid item xs={4}>
-            <div>Card Number</div>
-          </Grid>
-          <Grid item xs={8}>
-            <div>| {props.currentRow.oppId}</div>
-          </Grid>
-          <Grid item xs={4}>
-            <div>Opportunity Stage</div>
-          </Grid>
-          <Grid item xs={8}>
-            <div>| {props.currentRow.stage}</div>
-          </Grid>
-          <Grid item xs={4}>
-            <div>Amount</div>
-          </Grid>
-          <Grid item xs={8}>
-            <div>| ${props.currentRow.amount}</div>
-          </Grid>
-        </Grid>
+      <Grid container spacing={0} m={0} mb={2}>
+        <Grid item xs={11}>
+          <Box
+            ml={2}
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            flexWrap="wrap"
+          >
+            <table>
+              <tr>
+                <td align="left" width="140px">
+                  <div>Opportunity Number</div>
+                </td>
+                <td textAlign="left">
+                  <Grid container spacing={0}>
+                    <Grid item xs={1}>
+                      <div>
+                        <strong>{props.currentRow.oppId}</strong>
+                      </div>
+                    </Grid>
+                    <Grid item xs={11}>
+                      <div textAlign="right">
+                        <SwitchLeftIcon fontSize="small" />
+                        keys to scroll
+                      </div>
+                    </Grid>
+                  </Grid>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="140px">
+                  <div>
+                    Opportunity Stage{" "}
+                    <strong>{props.currentRow.stage.match(/[0-9]+/)}</strong>
+                  </div>
+                </td>
+                <td align="left">
+                  <strong>
+                    {props.currentRow.stage.replace(/[^a-zA-Z ]/g, "")}
+                  </strong>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="140px">
+                  <div>Amount</div>
+                </td>
+                <td align="left">
+                  <strong>${props.currentRow.amount}</strong>
+                </td>
+              </tr>
+            </table>
 
-        <Grid container spacing={0} textAlign="left">
-          <Grid item xs={12}>
-            <div>{props.currentRow.oppName}</div>
-          </Grid>
-          <Grid item xs={5}>
-            <div>Product </div>
-          </Grid>
-          <Grid item xs={7}>
-            <div>| {props.currentRow.product}</div>
-          </Grid>
-          <Grid item xs={5}>
-            <div>Sales Representative</div>
-          </Grid>
-          <Grid item xs={7}>
-            <div>| {props.currentRow.salesRepName} </div>
-          </Grid>
-        </Grid>
-
-        <Box display="flex" flexDirection="column">
-          <button onClick={handleClick}>Close</button>
-          <Box display="flex" flexDirection="row">
-            <button onClick={handleClick}>Prev</button>
-            <button onClick={handleClick}>Next</button>
+            <table>
+              <tr>
+                <td align="left" width="140px">
+                  <div>Opportunity Name</div>
+                </td>
+                <td align="left">
+                  <strong>{props.currentRow.oppName}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="140px">
+                  <div>Product </div>
+                </td>
+                <td align="left">
+                  <strong>{props.currentRow.product}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" width="140px">
+                  <div>Sales Representative</div>
+                </td>
+                <td align="left">
+                  <strong>{props.currentRow.salesRepName} </strong>
+                </td>
+              </tr>
+            </table>
           </Box>
+        </Grid>
+        <Grid item xs={1}>
+          <IconButton onClick={handleClick}>
+            <CancelPresentationIcon />
+          </IconButton>
+        </Grid>
+      </Grid>
+
+      <Box display="flex" flexWrap="wrap">
+        <Box flex="1 1 320px" minWidth="320px" ml={2} align="center">
+          <table>
+            <tr>
+              <td align="Center" colSpan="2">
+                <strong>Probability History</strong>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" width="140px">
+                <div>PILYTIX Current</div>
+              </td>
+              <td align="left">
+                <strong>
+                  {props.currentRow.pilytixProbability.toFixed(2)}
+                </strong>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" width="140px">
+                <div>Representative Current </div>
+              </td>
+              <td align="left">
+                <strong>{props.currentRow.repProbability.toFixed(2)}</strong>
+              </td>
+            </tr>
+          </table>
+          <ProbabilityHistoryChart
+            data={formattedProbHist}
+            pxProb={props.currentRow.pilytixProbability}
+          />
+        </Box>
+        <Box flex="1 1 320px" minWidth="320px" ml={2}>
+          <strong>Factors Influencing Win</strong>
+
+          <ProbabilityFactorsTrendChart
+            data={formattedProbFacts}
+            repProb={props.currentRow.repProbability}
+          />
         </Box>
       </Box>
-      <Box>
-        Current Representative Probability
-        {props.currentRow.repProbability}
-      </Box>
-      <Box>
-        Current Pilytix Probability
-        {props.currentRow.pilytixProbability}
-      </Box>
-      PILYTIX VS. Representative Probability History
-      <ProbabilityHistoryChart data={formattedProbHist} />
-      <ProbabilityFactorsTrendChart data={formattedProbFacts} />
     </>
   );
 };
