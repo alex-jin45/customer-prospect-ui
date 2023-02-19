@@ -7,7 +7,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { Box } from "@mui/material";
 
 import * as opportunities from "./opportunities.json";
 
@@ -47,28 +46,43 @@ export default function BasicTable() {
 
   return (
     <>
-      <Box className="Card">
-        {cardShown && (
-          <Card
-            currentRow={currentRow}
-            setCardShown={setCardShown}
-            cardShown={cardShown}
-          />
-        )}
-      </Box>
+      {cardShown && (
+        <Card
+          currentRow={currentRow}
+          setCardShown={setCardShown}
+          cardShown={cardShown}
+          function={detectKeyUp}
+        />
+      )}
 
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table" id="mainTable">
           <TableHead>
             <TableRow>
-              <TableCell align="left">Opp Name</TableCell>
-              <TableCell align="left">Opp Stage</TableCell>
-              <TableCell align="right">Rep Probability</TableCell>
-              <TableCell align="right">PX Probability</TableCell>
-              <TableCell align="left">PX Tier</TableCell>
-              <TableCell align="right">Amount</TableCell>
-              <TableCell align="left">Product</TableCell>
-              <TableCell align="left">Sales Rep</TableCell>
+              <TableCell align="left" bold="true">
+                <strong>Opp Name</strong>
+              </TableCell>
+              <TableCell align="left">
+                <strong>Stage</strong>
+              </TableCell>
+              <TableCell align="right">
+                <strong>Rep Probability</strong>
+              </TableCell>
+              <TableCell align="right">
+                <strong>PX Probability</strong>
+              </TableCell>
+              <TableCell align="left">
+                <strong>PX Tier</strong>
+              </TableCell>
+              <TableCell align="right">
+                <strong>Amount</strong>
+              </TableCell>
+              <TableCell align="left">
+                <strong>Product</strong>
+              </TableCell>
+              <TableCell align="left">
+                <strong>Sales Rep</strong>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
