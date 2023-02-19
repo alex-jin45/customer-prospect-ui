@@ -1,60 +1,45 @@
+import { tokens } from "../theme";
+import { useTheme } from "@mui/material";
 export const formatProbabilityFactors = (factsIncWin, factsDecWin) => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
   let formattedProbFacts = [
     [
       {
         id: "Factors"
         // "product": 1,
+        // "productColor: "red"
       },
       {
         id: "Total"
         // "Total": 17,
+        //"TotalColor: "blue"
       }
     ],
     [
       {} // "product": {"message: "text, "description": "weak Positive" }
-    ]
+    ],
+    { keys: [] }
   ];
 
-  const greenAccent = {
-    0: "#DCF5EF",
-    100: "#CCF1E7",
-    200: "#ACE8D9",
-    300: "#8CE0CA",
-    400: "#6CD7BB",
-    500: "#4CCEAC",
-    600: "#31B190",
-    700: "#24856C",
-    800: "#185948",
-    900: "#0C2D25"
-  };
-  const redAccent = {
-    0: "#F9E4E3",
-    100: "#F6D3D2",
-    200: "#EFB2B0",
-    300: "#E9918E",
-    400: "#E2706C",
-    500: "#DB4F4A",
-    600: "#C62D27",
-    700: "#97221E",
-    800: "#681815",
-    900: "#390D0B"
-  };
-
+  let keys = [];
   let totalWeight = 0;
   if (factsIncWin) {
     for (let i = 0; i < factsIncWin.length; i++) {
       const name = factsIncWin[i].name;
-      const weight = factsIncWin[i].weight.value; // let source = {};// source[name] = weight;
+      keys.push(name);
+      const weight = factsIncWin[i].weight.value;
       Object.assign(formattedProbFacts[0][0], { [name]: weight });
       Object.assign(formattedProbFacts[0][0], {
-        [name + "Color"]: greenAccent[i * 100]
+        [name + "Color"]: colors.greenAccent[i * 100]
       });
 
       const message = factsIncWin[i].message;
       const description = factsIncWin[i].weight.description;
+      const winEffect = "Factor Increasing Win";
 
       Object.assign(formattedProbFacts[1][0], {
-        [name]: { message: message, description: description }
+        [name]: { message: message, description: description, winEffect }
       });
 
       totalWeight = totalWeight + weight;
@@ -64,17 +49,23 @@ export const formatProbabilityFactors = (factsIncWin, factsDecWin) => {
   if (factsDecWin) {
     for (let i = 0; i < factsDecWin.length; i++) {
       const name = factsDecWin[i].name;
-      const weight = factsDecWin[i].weight.value; //let source = {};//source[name] = weight;
+      keys.push(name);
+      const weight = factsDecWin[i].weight.value;
       Object.assign(formattedProbFacts[0][0], { [name]: weight });
       Object.assign(formattedProbFacts[0][0], {
-        [name + "Color"]: redAccent[i * 100]
+        [name + "Color"]: colors.redAccent[i * 100]
       });
 
       const message = factsDecWin[i].message;
       const description = factsDecWin[i].weight.description;
+      const winEffect = "Factor Decreasing Win";
 
       Object.assign(formattedProbFacts[1][0], {
-        [name]: { message: message, description: description }
+        [name]: {
+          message: message,
+          description: description,
+          winEffect: winEffect
+        }
       });
 
       totalWeight = totalWeight + weight;
@@ -82,12 +73,18 @@ export const formatProbabilityFactors = (factsIncWin, factsDecWin) => {
   }
 
   Object.assign(formattedProbFacts[0][1], { Total: totalWeight });
+
+  if (totalWeight > 0) var totalColor = colors.greenAccent["DEFAULT"];
+  if (totalWeight <= 0) totalColor = colors.redAccent["DEFAULT"];
+  Object.assign(formattedProbFacts[0][1], { TotalColor: totalColor });
+
   Object.assign(formattedProbFacts[1][0], {
-    Total: { message: "", description: "" }
+    Total: { message: "", description: "", winEffect: "" }
   });
 
-  console.log("all my formatted factors ");
-  console.log(formattedProbFacts);
+  keys.push("Total");
+  Object.assign(formattedProbFacts[2], { keys: keys });
+
   return formattedProbFacts;
 };
 
