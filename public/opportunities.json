@@ -7,31 +7,31 @@
       "product": "Suite",
       "stage": "3. Initial Conversation",
       "repProbability": 0.2,
-      "pilytixTier": "4 Stars",
-      "pilytixProbability": 0.29,
+      "calculatedTier": "4 Stars",
+      "calculatedProbability": 0.29,
       "probabilityHistory": [
         {
           "daysAgo": 28,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.05
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.1,
+          "calculatedProb": 0.1,
           "repProb": 0.1
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.17,
+          "calculatedProb": 0.17,
           "repProb": 0.2
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.25,
+          "calculatedProb": 0.25,
           "repProb": 0.2
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Suite\" deals",
@@ -113,7 +113,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Amount",
           "message": "Rep's history working on deals similar in value to $68,989",
@@ -164,111 +164,111 @@
       "product": "Mini-Plan",
       "stage": "7. Nearing a Decision",
       "repProbability": 0.75,
-      "pilytixTier": "5 Stars",
-      "pilytixProbability": 0.88,
+      "calculatedTier": "5 Stars",
+      "calculatedProbability": 0.88,
       "probabilityHistory": [
         {
           "daysAgo": 140,
-          "pilytixProb": 0.68,
+          "calculatedProb": 0.68,
           "repProb": 0.2
         },
         {
           "daysAgo": 133,
-          "pilytixProb": 0.71,
+          "calculatedProb": 0.71,
           "repProb": 0.4
         },
         {
           "daysAgo": 126,
-          "pilytixProb": 0.72,
+          "calculatedProb": 0.72,
           "repProb": 0.5
         },
         {
           "daysAgo": 119,
-          "pilytixProb": 0.75,
+          "calculatedProb": 0.75,
           "repProb": 0.5
         },
         {
           "daysAgo": 112,
-          "pilytixProb": 0.76,
+          "calculatedProb": 0.76,
           "repProb": 0.5
         },
         {
           "daysAgo": 105,
-          "pilytixProb": 0.73,
+          "calculatedProb": 0.73,
           "repProb": 0.5
         },
         {
           "daysAgo": 98,
-          "pilytixProb": 0.76,
+          "calculatedProb": 0.76,
           "repProb": 0.5
         },
         {
           "daysAgo": 91,
-          "pilytixProb": 0.77,
+          "calculatedProb": 0.77,
           "repProb": 0.5
         },
         {
           "daysAgo": 84,
-          "pilytixProb": 0.8,
+          "calculatedProb": 0.8,
           "repProb": 0.5
         },
         {
           "daysAgo": 77,
-          "pilytixProb": 0.8,
+          "calculatedProb": 0.8,
           "repProb": 0.5
         },
         {
           "daysAgo": 70,
-          "pilytixProb": 0.8,
+          "calculatedProb": 0.8,
           "repProb": 0.5
         },
         {
           "daysAgo": 63,
-          "pilytixProb": 0.8,
+          "calculatedProb": 0.8,
           "repProb": 0.5
         },
         {
           "daysAgo": 56,
-          "pilytixProb": 0.8,
+          "calculatedProb": 0.8,
           "repProb": 0.5
         },
         {
           "daysAgo": 49,
-          "pilytixProb": 0.83,
+          "calculatedProb": 0.83,
           "repProb": 0.5
         },
         {
           "daysAgo": 42,
-          "pilytixProb": 0.84,
+          "calculatedProb": 0.84,
           "repProb": 0.5
         },
         {
           "daysAgo": 35,
-          "pilytixProb": 0.87,
+          "calculatedProb": 0.87,
           "repProb": 0.75
         },
         {
           "daysAgo": 28,
-          "pilytixProb": 0.88,
+          "calculatedProb": 0.88,
           "repProb": 0.75
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.89,
+          "calculatedProb": 0.89,
           "repProb": 0.75
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.86,
+          "calculatedProb": 0.86,
           "repProb": 0.75
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.85,
+          "calculatedProb": 0.85,
           "repProb": 0.75
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Mini-Plan\" deals",
@@ -358,7 +358,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": null
+      "calculatedFactorsDecreasingWin": null
     },
     {
       "oppId": 3,
@@ -368,41 +368,41 @@
       "product": "Full Season",
       "stage": "3. Initial Conversation",
       "repProbability": 0.2,
-      "pilytixTier": "2 Stars",
-      "pilytixProbability": 0.03,
+      "calculatedTier": "2 Stars",
+      "calculatedProbability": 0.03,
       "probabilityHistory": [
         {
           "daysAgo": 42,
-          "pilytixProb": 0.17,
+          "calculatedProb": 0.17,
           "repProb": 0.05
         },
         {
           "daysAgo": 35,
-          "pilytixProb": 0.16,
+          "calculatedProb": 0.16,
           "repProb": 0.1
         },
         {
           "daysAgo": 28,
-          "pilytixProb": 0.15,
+          "calculatedProb": 0.15,
           "repProb": 0.2
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.12,
+          "calculatedProb": 0.12,
           "repProb": 0.2
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.09,
+          "calculatedProb": 0.09,
           "repProb": 0.2
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.06,
+          "calculatedProb": 0.06,
           "repProb": 0.2
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Full Season\" deals",
@@ -420,7 +420,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Stage",
           "message": "Rep's tendency to close similar deals in stage \"3. Initial Conversation\"",
@@ -535,61 +535,61 @@
       "product": "Full Season",
       "stage": "5. Meeting or Product Discovery",
       "repProbability": 0.4,
-      "pilytixTier": "5 Stars",
-      "pilytixProbability": 0.39,
+      "calculatedTier": "5 Stars",
+      "calculatedProbability": 0.39,
       "probabilityHistory": [
         {
           "daysAgo": 70,
-          "pilytixProb": 0.25,
+          "calculatedProb": 0.25,
           "repProb": 0.1
         },
         {
           "daysAgo": 63,
-          "pilytixProb": 0.26,
+          "calculatedProb": 0.26,
           "repProb": 0.1
         },
         {
           "daysAgo": 56,
-          "pilytixProb": 0.29,
+          "calculatedProb": 0.29,
           "repProb": 0.1
         },
         {
           "daysAgo": 49,
-          "pilytixProb": 0.32,
+          "calculatedProb": 0.32,
           "repProb": 0.2
         },
         {
           "daysAgo": 42,
-          "pilytixProb": 0.31,
+          "calculatedProb": 0.31,
           "repProb": 0.2
         },
         {
           "daysAgo": 35,
-          "pilytixProb": 0.28,
+          "calculatedProb": 0.28,
           "repProb": 0.2
         },
         {
           "daysAgo": 28,
-          "pilytixProb": 0.31,
+          "calculatedProb": 0.31,
           "repProb": 0.2
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.32,
+          "calculatedProb": 0.32,
           "repProb": 0.2
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.35,
+          "calculatedProb": 0.35,
           "repProb": 0.3
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.35,
+          "calculatedProb": 0.35,
           "repProb": 0.3
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Full Season\" deals",
@@ -663,7 +663,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Age",
           "message": "History of similar deals at 75 days old",
@@ -706,56 +706,56 @@
       "product": "Half Season",
       "stage": "7. Nearing a Decision",
       "repProbability": 0.75,
-      "pilytixTier": "4 Stars",
-      "pilytixProbability": 0.41,
+      "calculatedTier": "4 Stars",
+      "calculatedProbability": 0.41,
       "probabilityHistory": [
         {
           "daysAgo": 63,
-          "pilytixProb": 0.55,
+          "calculatedProb": 0.55,
           "repProb": 0.4
         },
         {
           "daysAgo": 56,
-          "pilytixProb": 0.54,
+          "calculatedProb": 0.54,
           "repProb": 0.4
         },
         {
           "daysAgo": 49,
-          "pilytixProb": 0.53,
+          "calculatedProb": 0.53,
           "repProb": 0.4
         },
         {
           "daysAgo": 42,
-          "pilytixProb": 0.54,
+          "calculatedProb": 0.54,
           "repProb": 0.5
         },
         {
           "daysAgo": 35,
-          "pilytixProb": 0.54,
+          "calculatedProb": 0.54,
           "repProb": 0.5
         },
         {
           "daysAgo": 28,
-          "pilytixProb": 0.54,
+          "calculatedProb": 0.54,
           "repProb": 0.5
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.51,
+          "calculatedProb": 0.51,
           "repProb": 0.5
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.48,
+          "calculatedProb": 0.48,
           "repProb": 0.5
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.45,
+          "calculatedProb": 0.45,
           "repProb": 0.75
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Stage",
           "message": "Rep's tendency to close similar deals in stage \"7. Nearing a Decision\"",
@@ -821,7 +821,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Half Season\" deals",
@@ -880,16 +880,16 @@
       "product": "Mini-Plan",
       "stage": "1. No Conversation",
       "repProbability": 0.05,
-      "pilytixTier": "2 Stars",
-      "pilytixProbability": 0.15,
+      "calculatedTier": "2 Stars",
+      "calculatedProbability": 0.15,
       "probabilityHistory": [
         {
           "daysAgo": 7,
-          "pilytixProb": 0.19,
+          "calculatedProb": 0.19,
           "repProb": 0.05
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Age",
           "message": "History of similar deals at 10 days old",
@@ -955,7 +955,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Mini-Plan\" deals",
@@ -1030,106 +1030,106 @@
       "product": "Mini-Plan",
       "stage": "8. Payment Pending",
       "repProbability": 0.9,
-      "pilytixTier": "4 Stars",
-      "pilytixProbability": 0.69,
+      "calculatedTier": "4 Stars",
+      "calculatedProbability": 0.69,
       "probabilityHistory": [
         {
           "daysAgo": 133,
-          "pilytixProb": 0.29,
+          "calculatedProb": 0.29,
           "repProb": 0.2
         },
         {
           "daysAgo": 126,
-          "pilytixProb": 0.32,
+          "calculatedProb": 0.32,
           "repProb": 0.2
         },
         {
           "daysAgo": 119,
-          "pilytixProb": 0.35,
+          "calculatedProb": 0.35,
           "repProb": 0.2
         },
         {
           "daysAgo": 112,
-          "pilytixProb": 0.38,
+          "calculatedProb": 0.38,
           "repProb": 0.3
         },
         {
           "daysAgo": 105,
-          "pilytixProb": 0.41,
+          "calculatedProb": 0.41,
           "repProb": 0.3
         },
         {
           "daysAgo": 98,
-          "pilytixProb": 0.44,
+          "calculatedProb": 0.44,
           "repProb": 0.3
         },
         {
           "daysAgo": 91,
-          "pilytixProb": 0.41,
+          "calculatedProb": 0.41,
           "repProb": 0.3
         },
         {
           "daysAgo": 84,
-          "pilytixProb": 0.44,
+          "calculatedProb": 0.44,
           "repProb": 0.3
         },
         {
           "daysAgo": 77,
-          "pilytixProb": 0.43,
+          "calculatedProb": 0.43,
           "repProb": 0.3
         },
         {
           "daysAgo": 70,
-          "pilytixProb": 0.46,
+          "calculatedProb": 0.46,
           "repProb": 0.4
         },
         {
           "daysAgo": 63,
-          "pilytixProb": 0.49,
+          "calculatedProb": 0.49,
           "repProb": 0.4
         },
         {
           "daysAgo": 56,
-          "pilytixProb": 0.52,
+          "calculatedProb": 0.52,
           "repProb": 0.5
         },
         {
           "daysAgo": 49,
-          "pilytixProb": 0.56,
+          "calculatedProb": 0.56,
           "repProb": 0.5
         },
         {
           "daysAgo": 42,
-          "pilytixProb": 0.56,
+          "calculatedProb": 0.56,
           "repProb": 0.5
         },
         {
           "daysAgo": 35,
-          "pilytixProb": 0.56,
+          "calculatedProb": 0.56,
           "repProb": 0.5
         },
         {
           "daysAgo": 28,
-          "pilytixProb": 0.56,
+          "calculatedProb": 0.56,
           "repProb": 0.5
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.56,
+          "calculatedProb": 0.56,
           "repProb": 0.75
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.63,
+          "calculatedProb": 0.63,
           "repProb": 0.9
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.63,
+          "calculatedProb": 0.63,
           "repProb": 0.9
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Mini-Plan\" deals",
@@ -1203,7 +1203,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Lead Source",
           "message": "Team's historical success with \"Cold Call\" leads",
@@ -1246,10 +1246,10 @@
       "product": "Suite",
       "stage": "3. Initial Conversation",
       "repProbability": 0.2,
-      "pilytixTier": "3 Stars",
-      "pilytixProbability": 0.13,
+      "calculatedTier": "3 Stars",
+      "calculatedProbability": 0.13,
       "probabilityHistory": null,
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Stage",
           "message": "Rep's tendency to close similar deals in stage \"3. Initial Conversation\"",
@@ -1315,7 +1315,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Suite\" deals",
@@ -1374,22 +1374,22 @@
       "product": "Half Season",
       "stage": "2. Attempted Contact",
       "repProbability": 0.1,
-      "pilytixTier": "1 Star",
-      "pilytixProbability": 0.03,
+      "calculatedTier": "1 Star",
+      "calculatedProbability": 0.03,
       "probabilityHistory": [
         {
           "daysAgo": 14,
-          "pilytixProb": 0.21,
+          "calculatedProb": 0.21,
           "repProb": 0.1
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.1
         }
       ],
-      "pilytixFactorsIncreasingWin": null,
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsIncreasingWin": null,
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Half Season\" deals",
@@ -1488,101 +1488,101 @@
       "product": "Full Season",
       "stage": "2. Attempted Contact",
       "repProbability": 0.1,
-      "pilytixTier": "3 Stars",
-      "pilytixProbability": 0.07,
+      "calculatedTier": "3 Stars",
+      "calculatedProbability": 0.07,
       "probabilityHistory": [
         {
           "daysAgo": 126,
-          "pilytixProb": 0.05,
+          "calculatedProb": 0.05,
           "repProb": 0.05
         },
         {
           "daysAgo": 119,
-          "pilytixProb": 0.08,
+          "calculatedProb": 0.08,
           "repProb": 0.05
         },
         {
           "daysAgo": 112,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.05
         },
         {
           "daysAgo": 105,
-          "pilytixProb": 0.1,
+          "calculatedProb": 0.1,
           "repProb": 0.05
         },
         {
           "daysAgo": 98,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.05
         },
         {
           "daysAgo": 91,
-          "pilytixProb": 0.1,
+          "calculatedProb": 0.1,
           "repProb": 0.05
         },
         {
           "daysAgo": 84,
-          "pilytixProb": 0.13,
+          "calculatedProb": 0.13,
           "repProb": 0.1
         },
         {
           "daysAgo": 77,
-          "pilytixProb": 0.16,
+          "calculatedProb": 0.16,
           "repProb": 0.1
         },
         {
           "daysAgo": 70,
-          "pilytixProb": 0.15,
+          "calculatedProb": 0.15,
           "repProb": 0.1
         },
         {
           "daysAgo": 63,
-          "pilytixProb": 0.12,
+          "calculatedProb": 0.12,
           "repProb": 0.1
         },
         {
           "daysAgo": 56,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.1
         },
         {
           "daysAgo": 49,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.1
         },
         {
           "daysAgo": 42,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.1
         },
         {
           "daysAgo": 35,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.1
         },
         {
           "daysAgo": 28,
-          "pilytixProb": 0.11,
+          "calculatedProb": 0.11,
           "repProb": 0.1
         },
         {
           "daysAgo": 21,
-          "pilytixProb": 0.08,
+          "calculatedProb": 0.08,
           "repProb": 0.1
         },
         {
           "daysAgo": 14,
-          "pilytixProb": 0.08,
+          "calculatedProb": 0.08,
           "repProb": 0.1
         },
         {
           "daysAgo": 7,
-          "pilytixProb": 0.08,
+          "calculatedProb": 0.08,
           "repProb": 0.1
         }
       ],
-      "pilytixFactorsIncreasingWin": [
+      "calculatedFactorsIncreasingWin": [
         {
           "name": "Product",
           "message": "Rep's history with \"Full Season\" deals",
@@ -1624,7 +1624,7 @@
           }
         }
       ],
-      "pilytixFactorsDecreasingWin": [
+      "calculatedFactorsDecreasingWin": [
         {
           "name": "Amount",
           "message": "Rep's history working on deals similar in value to $187,500",

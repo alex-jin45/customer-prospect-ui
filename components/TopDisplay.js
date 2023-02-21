@@ -19,7 +19,7 @@ const TopDisplay = () => {
           justifyContent="space-between"
           flexWrap="wrap"
         >
-          <h2>PILYTIX Scored Opportunities</h2>
+          <h2>Quantified Prospects for New Client</h2>
         </Box>
       </Grid>
       <Grid item xs={1} mt={2}>

@@ -3,7 +3,6 @@ import React from "react";
 import ProbabilityHistoryChart from "./ProbabilityHistoryChart";
 import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
 
-
 import formatProbabilityHistory from "../helpers/formatProbabilityHistory";
 import formatProbabilityFactors from "../helpers/formatProbabilityFactors";
 
@@ -18,13 +17,13 @@ const Card = (props) => {
 
   const formattedProbHist = formatProbabilityHistory(
     props.currentRow.probabilityHistory,
-    props.currentRow.pilytixProbability,
+    props.currentRow.calculatedProbability,
     props.currentRow.repProbability
   );
 
   const formattedProbFacts = formatProbabilityFactors(
-    props.currentRow.pilytixFactorsIncreasingWin,
-    props.currentRow.pilytixFactorsDecreasingWin
+    props.currentRow.calculatedFactorsIncreasingWin,
+    props.currentRow.calculatedFactorsDecreasingWin
   );
 
   return (
@@ -128,11 +127,11 @@ const Card = (props) => {
             </tr>
             <tr>
               <td align="left" width="140px">
-                <div>PILYTIX Current</div>
+                <div>Calculated Current</div>
               </td>
               <td align="left">
                 <strong>
-                  {props.currentRow.pilytixProbability.toFixed(2)}
+                  {props.currentRow.calculatedProbability.toFixed(2)}
                 </strong>
               </td>
             </tr>
@@ -147,7 +146,7 @@ const Card = (props) => {
           </table>
           <ProbabilityHistoryChart
             data={formattedProbHist}
-            pxProb={props.currentRow.pilytixProbability}
+            pxProb={props.currentRow.calculatedProbability}
           />
         </Box>
         <Box flex="1 1 320px" minWidth="320px" ml={2}>
