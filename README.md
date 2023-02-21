@@ -1,6 +1,6 @@
 # customer-prospect-UI
 This is a frontend user interface to display customer prospects summaries and qauntities to companies.
-Run this UI at: customer-prospect-kqqwxaq43-ramonjortega.vercel.app
+Run this UI at: https://customer-prospect-ui.vercel.app/
 
 It is built in React, Deployed using Next.js, hosted on Vercel.
 It includes Interactive charts created using Nivo.
