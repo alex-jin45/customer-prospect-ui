@@ -8,7 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-import * as opportunities from "../src/opportunities.json";
+import * as opportunities from "../public/opportunities.json";
 
 import Card from "./Card";
 

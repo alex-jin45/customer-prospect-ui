@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "@mui/material";
-import "./styles.css";
+import "../styles/globals.css";
 import { tokens } from "../public/theme";
 
 import { ResponsiveLine } from "@nivo/line";

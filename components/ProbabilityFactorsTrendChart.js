@@ -2,7 +2,7 @@ import React from "react";
 
 import { useTheme } from "@mui/material";
 import { tokens } from "../public/theme";
-import "./styles.css";
+import "../styles/globals.css";
 
 import { ResponsiveBar } from "@nivo/bar";
 
