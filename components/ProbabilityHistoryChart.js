@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "@mui/material";
 import "./styles.css";
-import { tokens } from "./theme";
+import { tokens } from "../src/theme";
 
 import { ResponsiveLine } from "@nivo/line";
 

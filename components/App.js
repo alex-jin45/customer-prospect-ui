@@ -1,9 +1,9 @@
 import "./styles.css";
 import BasicTable from "./Table";
-import { ColorModeContext, useMode } from "./theme";
+import { ColorModeContext, useMode } from "../src/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
-import TopDisplay from "./TopDisplay";
+import TopDisplay from "../src/TopDisplay";
 
 export default function App() {
   const [theme, colorMode] = useMode();

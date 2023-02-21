@@ -2,8 +2,8 @@ import React from "react";
 
 import ProbabilityHistoryChart from "./ProbabilityHistoryChart";
 
-import formatProbabilityHistory from "./helpers/formatProbabilityHistory";
-import formatProbabilityFactors from "./helpers/formatProbabilityFactors";
+import formatProbabilityHistory from "../src/helpers/formatProbabilityHistory";
+import formatProbabilityFactors from "../src/helpers/formatProbabilityFactors";
 import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
 
 import { Box, Grid, IconButton } from "@mui/material";
