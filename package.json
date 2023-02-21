@@ -5,8 +5,10 @@
   "main": "./src/index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -26,10 +28,10 @@
     "@nivo/bar": "^0.80.0",
     "@nivo/core": "^0.80.0",
     "@nivo/line": "^0.80.0",
+    "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-pro-sidebar": "^1.0.0",
-    "react-scripts": "^5.0.1"
+    "react-pro-sidebar": "^1.0.0"
   },
   "browserslist": {
     "production": [
