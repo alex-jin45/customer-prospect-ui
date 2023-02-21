@@ -1,4 +1,4 @@
-import { tokens } from "../theme";
+import { tokens } from "../public/theme";
 import { useTheme } from "@mui/material";
 export const formatProbabilityFactors = (factsIncWin, factsDecWin) => {
   const theme = useTheme();
