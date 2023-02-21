@@ -1,6 +1,6 @@
 import "./styles.css";
 import BasicTable from "./Table";
-import { ColorModeContext, useMode } from "../src/theme";
+import { ColorModeContext, useMode } from "../public/theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import TopDisplay from "../src/TopDisplay";

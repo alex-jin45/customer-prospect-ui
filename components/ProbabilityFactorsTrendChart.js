@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useTheme } from "@mui/material";
-import { tokens } from "../src/theme";
+import { tokens } from "../public/theme";
 import "./styles.css";
 
 import { ResponsiveBar } from "@nivo/bar";
