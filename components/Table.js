@@ -69,10 +69,10 @@ export default function BasicTable() {
                 <strong>Rep Probability</strong>
               </TableCell>
               <TableCell align="right">
-                <strong>PX Probability</strong>
+                <strong>Calc Probability</strong>
               </TableCell>
               <TableCell align="left">
-                <strong>PX Tier</strong>
+                <strong>Calc Tier</strong>
               </TableCell>
               <TableCell align="right">
                 <strong>Amount</strong>
