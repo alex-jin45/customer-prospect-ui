@@ -1,10 +1,11 @@
 import React from "react";
 
 import ProbabilityHistoryChart from "./ProbabilityHistoryChart";
+import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
+
 
 import formatProbabilityHistory from "../helpers/formatProbabilityHistory";
 import formatProbabilityFactors from "../helpers/formatProbabilityFactors";
-import ProbabilityFactorsTrendChart from "./ProbabilityFactorsTrendChart";
 
 import { Box, Grid, IconButton } from "@mui/material";
 import CancelPresentationIcon from "@mui/icons-material/CancelPresentation";
@@ -37,6 +38,7 @@ const Card = (props) => {
             justifyContent="space-between"
             flexWrap="wrap"
           >
+            
             <table>
               <tr>
                 <td align="left" width="140px">
