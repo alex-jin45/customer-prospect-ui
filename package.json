@@ -28,7 +28,10 @@
     "@nivo/bar": "^0.80.0",
     "@nivo/core": "^0.80.0",
     "@nivo/line": "^0.80.0",
+    "@prisma/client": "^4.10.1",
     "next": "^13.1.6",
+    "pg": "^8.9.0",
+    "prisma": "^4.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pro-sidebar": "^1.0.0"
