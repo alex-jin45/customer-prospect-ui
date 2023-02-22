@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import loadDB from "../helpers/loadDB";
+import clearDB from "../helpers/clearDB";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -107,6 +109,8 @@ export default function BasicTable() {
           </TableBody>
         </Table>
       </TableContainer>
+      <button>Push JSON to DB (BETA)</button>
+      <button>Clear DB (BETA)</button>
     </>
   );
 }
