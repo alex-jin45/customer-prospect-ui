@@ -97,8 +97,8 @@ export default function BasicTable() {
                 </TableCell>
                 <TableCell align="left">{row.stage}</TableCell>
                 <TableCell align="right">{row.repProbability}</TableCell>
-                <TableCell align="right">{row.pilytixProbability}</TableCell>
-                <TableCell align="left">{row.pilytixTier}</TableCell>
+                <TableCell align="right">{row.calculatedProbability}</TableCell>
+                <TableCell align="left">{row.calculatedTier}</TableCell>
                 <TableCell align="right">{row.amount}</TableCell>
                 <TableCell align="left">{row.product}</TableCell>
                 <TableCell align="left">{row.salesRepName}</TableCell>
